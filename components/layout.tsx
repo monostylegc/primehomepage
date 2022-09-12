@@ -1,5 +1,3 @@
-import Nav from "./nav"
-
 interface LayoutProps{
     children: React.ReactNode;
 }
@@ -7,8 +5,7 @@ interface LayoutProps{
 export default function Layout({children}:LayoutProps){
     return(
         <>
-            <Nav />
-            <div className="max-w-7xl mx-auto mt-16">
+            <div>
                 {children}
             </div>
         </>
