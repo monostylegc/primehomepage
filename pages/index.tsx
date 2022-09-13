@@ -4,10 +4,9 @@ import Layout from '../components/layout'
 const Home: NextPage = () => {
   return (
     <Layout>
-      <p className=' font-bold text-6xl'>
-        Hello
+      <p className=' font-bold text-9xl'>
+        안녕하세요
       </p>
-      <img src='/logo.svg' className='w-24 h-24' />
     </Layout>
   )
 }

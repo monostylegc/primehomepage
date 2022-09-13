@@ -8,6 +8,11 @@
 }
 
 html {
-  font-size: 62.5%;
+  transition: .2s all;
 }
 
+@media screen and ( max-width: 768px){
+  html {
+    font-size: 75%;
+  }
+}
