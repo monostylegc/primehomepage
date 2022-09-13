@@ -5,4 +5,9 @@
 @font-face {
     font-family: "ygothic";
     src: url("../public/fonts/ygothic330.ttf");
-  }
+}
+
+html {
+  font-size: 62.5%;
+}
+

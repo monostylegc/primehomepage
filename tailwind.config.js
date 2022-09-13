@@ -8,6 +8,11 @@ module.exports = {
     fontFamily: {
         sans: ["ygothic", "sans-serif"],
       },
+    // colors: {
+    //   'primary' :{
+
+    //   }
+    //}
   },
   plugins: [],
 }
