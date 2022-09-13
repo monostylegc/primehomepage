@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Hero from '../components/hero'
 import Layout from '../components/layout'
 
 const Home: NextPage = () => {
@@ -11,8 +10,9 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <Hero />
-      { i.map(v=><p>안녕</p>) }
+      <p className=' font-bold text-6xl'>
+        안녕하세요
+      </p>
     </Layout>
   )
 }
