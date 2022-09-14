@@ -8,11 +8,13 @@ module.exports = {
     fontFamily: {
         sans: ["ygothic", "sans-serif"],
       },
-    // colors: {
-    //   'primary' :{
-
-    //   }
-    //}
+      extend:{
+        colors: {
+          'primary' : '#1c9946',
+          'secondary' :'#88ba46',
+          'accent' : '#e2ef25',
+        }
+      }
   },
   plugins: [],
 }

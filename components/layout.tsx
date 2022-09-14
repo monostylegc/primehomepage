@@ -1,3 +1,4 @@
+import Nav from "./nav";
 
 interface LayoutProps{
     children: React.ReactNode;
@@ -6,7 +7,11 @@ interface LayoutProps{
 export default function Layout({children}:LayoutProps){
     return(
         <>
+            <Nav/>
+            <div>
                 {children}
+            </div>
+            
         </>
     )
 }
