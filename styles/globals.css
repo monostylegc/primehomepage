@@ -11,14 +11,6 @@ html {
   transition: .2s all;
 }
 
-.clip{
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-}
-
-.clipActive{
-   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
 @media screen and ( max-width: 768px){
   html {
     font-size: 80%;
