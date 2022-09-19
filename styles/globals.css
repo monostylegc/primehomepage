@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "ygothic";
-    src: url("../public/fonts/ygothic330.ttf");
-}
-
 html {
   transition: .2s all;
 }
@@ -15,4 +10,4 @@ html {
   html {
     font-size: 80%;
   }
-}
+} 

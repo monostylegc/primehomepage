@@ -10,11 +10,11 @@ export default function Nav(){
     }
 
     return(
-        <header>
-            <nav className="bg-white bg-opacity-50 border-gray-200 px-4 lg:px-6 py-2.5">
+        <header className="fixed top-0 right-0 left-0 z-50">
+            <nav className="bg-white opacity-90 border-gray-200 px-4 lg:px-6 py-2.5">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link href="/"><a  className="flex items-center">
-                        <img src="/logo.png" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+                        <img src="/logo.png" className="mr-3 h-6 sm:h-9" alt="Logo" />
                         <span className="self-center text-xl font-semibold text-primary whitespace-nowrap">
                             프라임<span className="text-secondary">병원</span>
                         </span>
@@ -36,36 +36,36 @@ export default function Nav(){
                     <div className={cls(!menu?
                         "hidden":"",
                         "justify-between items-center w-full lg:flex lg:w-auto lg:order-1 lg:space-x-8")} >
-                        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary lg:p-0">
+                        <div className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                            <Link href="/spine">
+                                <a  className="block py-2 pr-4 pl-3 rounded-md text-gray-800 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary hover:font-semibold lg:p-0">
                                     척추센터
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary lg:p-0">
+                            </Link>
+                            <Link href="/arthro">
+                                <a  className="block py-2 pr-4 pl-3 rounded-md text-gray-800 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary hover:font-semibold lg:p-0">
                                     관절센터
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary lg:p-0 ">
-                                    내과 검진
+                            </Link>
+                            <Link href="/internal">
+                                <a  className="block py-2 pr-4 pl-3 rounded-md text-gray-800 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary hover:font-semibold lg:p-0">
+                                    내과검진
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary lg:p-0">
+                            </Link>
+                            <Link href="/info">
+                                <a  className="block py-2 pr-4 pl-3 rounded-md text-gray-800 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary hover:font-semibold lg:p-0">
                                     진료안내
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary lg:p-0">
+                            </Link>
+                            <Link href="/health">
+                                <a  className="block py-2 pr-4 pl-3 rounded-md text-gray-800 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary hover:font-semibold lg:p-0">
                                     건강정보
                                 </a>
-                            </li>
-                        </ul>
+                            </Link>
+                        </div>
                         <div>
                             <Link href="#">
-                                <a className={cls(!menu?"hidden":"","w-full lg:w-auto lg:flex order-2 block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary lg:p-0")}>
+                                <a className={cls(!menu?"hidden":"","w-full lg:w-auto lg:flex order-2 block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary hover:font-semibold lg:p-0")}>
                                     로그인
                                 </a>
                             </Link>

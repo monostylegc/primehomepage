@@ -5,10 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-        sans: ["ygothic", "sans-serif"],
-      },
-      extend:{
+        extend:{
         colors: {
           'primary' : '#1c9946',
           'secondary' :'#88ba46',

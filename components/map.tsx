@@ -1,14 +1,19 @@
 import useKakao from "../hooks/useKakao"
 import { useState, useEffect } from "react"
 
-export default function Map() {
+interface MapProps {
+  lat: number;
+  lng: number;
+}
+
+export default function Map({lat, lng}:MapProps) {
     const [container, setContainer] = useState<HTMLDivElement | null>(null)
 
-    const { kakao, map, services, putMarker } = useKakao(33.450701, 126.570667,container)
+    const { kakao, map, services, putMarker } = useKakao(lat, lng, container)
     useEffect(() => {
       if (!kakao || !map) return;
   
-      putMarker(33.450701, 126.570667, () => {});
+      putMarker(lat, lng, () => {});
     }, [kakao, map, putMarker])
 
     return (
