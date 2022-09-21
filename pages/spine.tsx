@@ -4,10 +4,10 @@ import AOS from 'aos'
 import { useEffect } from 'react'
 import "aos/dist/aos.css"
 
-import Card from '../components/card'
 import CardSection from '../components/cardsection'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
+import CardA from '../components/cardA'
 
 const Spine: NextPage = () => {
     useEffect(
@@ -23,8 +23,8 @@ const Spine: NextPage = () => {
         <Hero title='프라임' subtitle='척추센터' imgurl='https://www.disc21.co.kr/img/main/main4.png' />
 
         <CardSection title='척추센터 의료진'>
-           <Card imgurl='/photo/원장님사진.jpg' title='최봉식' subtitle='신경외과전문의' description='뇌 척추질환' link='#'/>
-           <Card imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환' link='#'/>
+           <CardA imgurl='/photo/원장님사진.jpg' title='최봉식' subtitle='신경외과전문의' description='뇌 척추질환' link='#'/>
+           <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환' link='#'/>
         </CardSection>
         
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-2 mx-2 '>
