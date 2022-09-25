@@ -5,10 +5,11 @@ import "aos/dist/aos.css"
 interface HeroProps {
     title : string;
     subtitle? : string;
+    description? : string;
     imgurl : string;
 }
 
-export default function Hero({title, subtitle, imgurl} : HeroProps) {
+export default function Hero({title, subtitle, imgurl, description} : HeroProps) {
     useEffect(
         ()=>{
             AOS.init({
@@ -18,14 +19,12 @@ export default function Hero({title, subtitle, imgurl} : HeroProps) {
     ,[])
 
     return(
-        <section className="grid grid-cols-1 lg:grid-cols-2 px-4 pb-12">
-            <div className='bg-slate-300 rounded-md w-full h-80' data-aos="fade-up">
-               <img src={imgurl} 
-                className='w-full h-80 object-cover' />
-            </div>
-            <div  data-aos="fade-down" className='mt-12 text-center'>
-                <h1 className='text-8xl font-bold text-primary mr-12'>{title}</h1>
-                <h1 className='text-8xl font-bold text-secondary ml-12 mt-4'>{subtitle}</h1>
+        <section className="h-[50vh] relative bg-gradient-to-l from-black via-transparent to-black">
+            <img src={imgurl} className="absolute w-full h-full object-cover mix-blend-overlay" />
+            <div data-aos="fade-up" className='w-full h-full flex flex-col justify-center text-center space-y-4'>
+                <h1 className='text-8xl font-bold text-primary '>{title}</h1>
+                <h3 className='text-6xl font-semibold text-secondary '>{subtitle}</h3>
+                <p className='text-xl font-medium text-gray-600 '>{description}</p>
             </div>
         </section>
     )

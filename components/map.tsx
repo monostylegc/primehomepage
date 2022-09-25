@@ -17,6 +17,6 @@ export default function Map({lat, lng}:MapProps) {
     }, [kakao, map, putMarker])
 
     return (
-        <div className="w-full h-72 lg:h-96 rounded-md" ref={setContainer}></div>
+        <div className="w-full h-72 lg:h-96 rounded-lg" ref={setContainer}></div>
     )
 }

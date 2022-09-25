@@ -2,7 +2,9 @@ import Link from "next/link";
 
 export default function Footer(){
     return (
-        <footer className="bg-slate-300 p-4 mt-12">
+        <>
+        <div className="pt-4 bg-slate-100"></div>
+        <footer className="bg-slate-300 p-4">
             <div className="flex justify-around items-center max-w-4xl mx-auto mb-4 ">
                 <Link href='#'><a className="w-8 h-8 hover:scale-110">
                     <img src='/icons/naver.png' />    
@@ -15,7 +17,7 @@ export default function Footer(){
                 </a></Link>
             </div>
             <hr/>
-            <div className="grid grid-cols-3 lg:grid-cols-6 max-w-4xl mx-auto my-4">
+            <div className="grid grid-cols-3 lg:grid-cols-6 max-w-4xl mx-auto my-4 text-center">
                     <Link href='#'><a className="text-xs font-semibold lg:font-medium text-gray-700 hover:text-primary">
                         <p>비급여안내</p>    
                     </a></Link>
@@ -61,5 +63,6 @@ export default function Footer(){
             </div>
             
         </footer>
+        </>
     )
 }

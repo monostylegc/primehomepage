@@ -12,7 +12,7 @@ export default function Layout({children}:LayoutProps){
             <Nav/>
             <div className="mt-16"></div>
             <FAB/>
-            <div>
+            <div className="bg-slate-100">
                 {children}
             </div>
             <Footer />

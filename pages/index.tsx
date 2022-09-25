@@ -7,9 +7,10 @@ import "aos/dist/aos.css"
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import Map from '../components/map'
-import CardSection from '../components/cardsection'
+import ScrollSection from '../components/scrollsection'
 import CardB from '../components/cardB'
 import CardA from '../components/cardA'
+import Feature from '../components/feature'
 
 const Home: NextPage = () => {
   useEffect(
@@ -22,42 +23,61 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <Hero imgurl='https://www.disc21.co.kr/img/main/main1_m.png' title='평생관리' subtitle='맞춤진료'/>
-      <section className='mx-auto max-w-7xl mt-12 mb-12'>
-        <div className='p-8 cursor-pointer hover:bg-slate-100' data-aos="fade-right">
-          <h2 className='text-primary font-semibold text-6xl'>
-            척추센터
-          </h2>
-          <h3 className='text-gray-700 font-semibold text-2xl mt-4 ml-12'>
-            안 아픈 것을 넘어서 더 건강하게
-          </h3>
-        </div>
-        <div className='p-8 text-right mt-16
-        cursor-pointer hover:bg-slate-100' data-aos="fade-left">
-          <h2 className='text-secondary font-semibold text-6xl'>
-            관절센터
-          </h2>
-          <h3 className='text-gray-700 font-semibold text-2xl mt-4 mr-12'>
-          최소한의 치료 최대한의 효과
-          </h3>
-        </div>
-        <div className='p-8  mt-16 cursor-pointer hover:bg-slate-100' data-aos="fade-right">
-          <h2 className='text-primary font-semibold text-6xl'>
-            검진내과센터
-          </h2>
-          <h3 className='text-gray-700 font-semibold text-2xl mt-4 ml-12'>
-            미리 미리 잘 찾아서 치료한다
-          </h3>
+      <Hero 
+      imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+      title='평생관리' 
+      subtitle='맞춤진료' 
+      description='20년간 같은 자리를 지켜온 병원'/>
+      
+      <Feature 
+      title='프라임병원' 
+      description='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsu will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)' />
+      
+      <section className='mx-auto max-w-7xl bg-white rounded-lg  m-4 p-8'>
+        <h2 className='text-primary text-5xl'>프라임 진료센터</h2>
+        <div className='grid grid-cols-1 lg:grid-cols-2 mt-4 gap-8'>
+          <div className='cursor-pointer rounded-lg border border-gray-600 p-8'>
+            <h3 className='text-primary text-3xl'>
+              척추센터
+            </h3>
+            <h5 className='text-gray-600 text-xl mt-2'>
+              안 아픈 것을 넘어서 더 건강하게
+            </h5>
+          </div>
+          <div className='cursor-pointer rounded-lg border border-gray-600 p-8'>
+            <h3 className='text-primary text-3xl'>
+              척추센터
+            </h3>
+            <h5 className='text-gray-600 text-xl mt-2'>
+              안 아픈 것을 넘어서 더 건강하게
+            </h5>
+          </div>
+          <div className='cursor-pointer rounded-lg border border-gray-600 p-8'>
+            <h3 className='text-primary text-3xl'>
+              척추센터
+            </h3>
+            <h5 className='text-gray-600 text-xl mt-2'>
+              안 아픈 것을 넘어서 더 건강하게
+            </h5>
+          </div>
+          <div className='cursor-pointer rounded-lg border border-gray-600 p-8'>
+            <h3 className='text-primary text-3xl'>
+              척추센터
+            </h3>
+            <h5 className='text-gray-600 text-xl mt-2'>
+              안 아픈 것을 넘어서 더 건강하게
+            </h5>
+          </div>
         </div>
       </section>
       
-      <CardSection title='이 달의 혜택'> 
+      <ScrollSection title='이 달의 혜택'> 
         <CardB imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=31' title='코로나 후유증 진료'  link='#'/>
         <CardB imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=38' title='통합 간병 서비스'  link='#'/>
         <CardB imgurl='https://www.disc21.co.kr/img/main/banner1.png' title='간호사 모집' link='#'/>
-      </CardSection>
+      </ScrollSection>
       
-      <CardSection title='프라임 의료진'> 
+      <ScrollSection title='프라임 의료진'> 
         <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환'
         link='#'/>
         <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환'
@@ -69,14 +89,15 @@ const Home: NextPage = () => {
         <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환'
         link='#'/>
         <CardA imgurl='/photo/원장님사진.jpg' title='최봉식' subtitle='신경외과전문의' description='뇌 척추질환' link='#'/>
-      </CardSection>
+      </ScrollSection>
       
-      <div className='p-8 m-4 mx-auto max-w-7xl'>
-        <h2 className='text-3xl text-primary font-semibold'>오시는 길</h2>
-        <div className='mt-4 '>
+      <div className='p-8 mt-4 max-w-7xl rounded-lg bg-white mx-auto'>
+        <h2 className='text-5xl text-primary'>오시는 길</h2>
+        <div className='mt-4'>
           <Map lat={ 35.10584586911908 } lng={128.9658011123337}/>
         </div>
       </div>
+      
     </Layout>
   )
 }
