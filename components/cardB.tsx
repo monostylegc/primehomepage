@@ -8,8 +8,8 @@ interface CardProps {
 
 export default function CardB({imgurl, title, link} : CardProps ) {
     return (
-        <div className="flex flex-col w-48 shrink-0">
-            <img src={imgurl} className="w-full h-52 rounded-md object-cover"/>
+        <div className="flex flex-col w-44 shrink-0">
+            <img src={imgurl} className="w-full h-44 rounded-md object-cover"/>
             <div className="py-1 flex items-center space-x-2">
                 <p className="text-sm font-medium text-gray-700">{title}</p>
             </div>
