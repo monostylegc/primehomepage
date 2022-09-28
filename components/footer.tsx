@@ -48,7 +48,7 @@ export default function Footer(){
                             </a>
                         </Link>
                     </p>
-                    <p className="text-sm text-gray-600">대표상담번호<span className="text-lg font-semibold text-primary">051-202-7800</span></p>
+                    <p className="text-sm text-gray-600">대표상담번호 <span className="text-lg font-semibold text-primary ml-1">051-202-7800</span></p>
                     <p className="text-sm text-gray-600">평 일 : 09:00 ~ 18:00 (점심 12:30 ~ 13:30)</p>
                     <p className="text-sm text-gray-600">토요일 : 09:00 ~ 13:00 일요일 : 휴 진  </p>              
                 </div>
