@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -15,10 +15,50 @@ model Doctor {
   name String
   part String
   description String
-  carrier Json?
-  weekschedule Json?
-  offday Json?
+  carriers Carrier[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  
+  workSchedule WorkSchedule?
+  offDay OffDay?
+}
+
+model Carrier{
+  id Int @id @default(autoincrement())
+  title String
+  date DateTime?
+  doctor Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade )
+  doctorId Int @unique
+}
+
+model WorkSchedule {
+  id Int @id @default(autoincrement())
+  doctor Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  doctorId Int @unique
+  monAm Boolean
+  monPm Boolean
+  tueAm Boolean
+  tuePm Boolean
+  wedAm Boolean
+  wedPm Boolean
+  thrAm Boolean
+  thrPm Boolean
+  friAm Boolean
+  friPm Boolean
+  satAm Boolean
+}
+
+model OffDay{
+  id Int @id @default(autoincrement())
+  doctor Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  doctorId Int @unique
+  date0 DateTime?
+  date1 DateTime?
+  date2 DateTime?
+  date3 DateTime?
+  date4 DateTime?
+  date5 DateTime?
+  date6 DateTime?
+  date7 DateTime?
+  date8 DateTime?
+  date9 DateTime?
 }
