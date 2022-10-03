@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useState } from "react"
-import { cls } from "../libs/client/utils"
+import { cls } from "@libs/client/utils"
 
 export default function Nav(){
     const [menu, setMenu] = useState(false)

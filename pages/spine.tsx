@@ -4,13 +4,13 @@ import AOS from 'aos'
 import { useEffect } from 'react'
 import "aos/dist/aos.css"
 
-import ScrollSection from '../components/scrollsection'
-import Hero from '../components/hero'
-import Layout from '../components/layout'
-import CardA from '../components/cardA'
-import Feature from '../components/feature'
-import GridSection from '../components/gridsection'
-import CardB from '../components/cardB'
+import ScrollSection from '@components/scrollsection'
+import Hero from '@components/hero'
+import Layout from '@components/layout'
+import CardA from '@components/cardA'
+import Feature from '@components/feature'
+import GridSection from '@components/gridsection'
+import CardB from '@components/cardB'
 
 const Spine: NextPage = () => {
     useEffect(
