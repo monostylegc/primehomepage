@@ -116,3 +116,29 @@ model OffDay{
   date8         DateTime?
   date9         DateTime?
 }
+
+model DiseaseInfo {
+  id Int @id @default(autoincrement())
+  title String
+  category String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content String @db.LongText
+}
+
+model TreatmentInfo {
+  id Int @id @default(autoincrement())
+  title String
+  category String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content String @db.LongText
+}
+
+model HealthInfo {
+  id Int @id @default(autoincrement())
+  title String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content String @db.LongText
+}
