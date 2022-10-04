@@ -28,7 +28,7 @@ export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
                 const formData = new FormData();
     
                 if(file) {
-                formData.append("file", file[0]);
+                    formData.append("file", file[0]);
                 }
   
                 // 현재 Editor 커서 위치에 서버로부터 전달받은 이미지 불러오는 url을 이용하여 이미지 태그 추가

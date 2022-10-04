@@ -6,6 +6,7 @@ import '@toast-ui/editor/dist/toastui-editor.css';
 import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 import 'tui-color-picker/dist/tui-color-picker.css';
 import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css';
+
 import { useEffect, useRef } from 'react';
 
 interface IEditor {
@@ -34,23 +35,23 @@ const Editor: NextPage<IEditor> = ({ htmlStr, setHtmlStr }) => {
             // 이미지 서버로 데이터를 전달하는 기능 추가
             editorRef.current.getInstance().addHook('addImageBlobHook', (blob, callback) => {
                 (async () => {
+                    const { uploadURL } = await (await fetch(`/api/files`)).json()
+                    console.log(uploadURL)
+                    console.log(blob)
                     const formData = new FormData();
-                    formData.append("multipartFiles", blob);
+                    formData.append("file", blob);
 
-                    const res = await axios.post('http://localhost:8080/uploadImage', formData);
-
-                    callback(res.data, "input alt text");
+                    const {
+                        result : { id }
+                    } = await (await fetch(uploadURL, { method: 'POST', body: formData })).json()
+                    console.log(id)
+                    callback(`https://imagedelivery.net/IiTY7pTorrOvvCNvIBpczw/${id}/public`, id.toString());
                   })();
         
                 return false;
             });
         }
-    }, [])
-
-    // Editor에 사용되는 plugin 추가
-    const plugins = [
-        colorSyntax, // 글자 색상 추가
-    ]
+    }, [htmlStr])
 
     return (
         <ToastEditor
@@ -59,8 +60,9 @@ const Editor: NextPage<IEditor> = ({ htmlStr, setHtmlStr }) => {
             initialEditType="wysiwyg"
             useCommandShortcut={true}
             ref={editorRef}
-            plugins={plugins}
+            plugins={[colorSyntax]}
             onChange={onChangeEditor}
+            height='auto'
         />
     )
 }
