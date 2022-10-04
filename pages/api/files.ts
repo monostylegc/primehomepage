@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import withHandler, { ResponseType } from "@libs/server/withhandler"
-import client from "@libs/client"
 
 async function handler(
   req: NextApiRequest,
@@ -18,7 +17,7 @@ async function handler(
       }
     )
   ).json();
-  console.log(response);
+
   res.json({
     ok: true,
     ...response.result,

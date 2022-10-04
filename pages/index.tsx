@@ -4,8 +4,8 @@ import AOS from 'aos'
 import { useEffect } from 'react'
 import "aos/dist/aos.css"
 
-import Hero from '@components/hero'
 import Layout from '@components/layout'
+import Hero from '@components/hero'
 import Map from '@components/map'
 import ScrollSection from '@components/scrollsection'
 import CardB from '@components/cardB'

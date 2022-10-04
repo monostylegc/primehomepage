@@ -25,9 +25,9 @@ export default function withHandler
         if (req.method && !methods.includes(req.method as any)) {
             return res.status(405).end();
         }
-        if (isPrivate && !session) {
-            return res.status(401).json({ ok: false, error: "Login first, plz." });
-        }
+        // if (isPrivate && !session) {
+        //     return res.status(401).json({ ok: false, error: "Login first, plz." });
+        // }
         try {
             handler(req, res)
         } catch (error) {
