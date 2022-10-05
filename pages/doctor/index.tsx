@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react"
 import dynamic from 'next/dynamic'
 
-const TextEditor = dynamic(() => import('@components/tuieditor'), { ssr: false });
+const TextEditor = dynamic(() => import('@components/quilleditor'), { ssr: false });
+const TextViewer = dynamic(() => import('@components/quillview'), { ssr: false });
 
 export default function Staffs() {
     const [htmlStr, setHtmlStr] = useState<string>('');
@@ -19,8 +20,7 @@ export default function Staffs() {
     return (
         <>
             <TextEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
-            <div>{htmlStr}</div>
-            <div ref={viewContainerRef} />
+            <TextViewer htmlStr={htmlStr} /> 
         </>
     )
 }
