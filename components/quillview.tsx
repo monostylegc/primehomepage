@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import ReactQuill from 'react-quill'
 
 interface IEditor { 
@@ -5,14 +6,16 @@ interface IEditor {
 }
 
 export default function Viewer({ htmlStr } : IEditor) {
-    const modules = {
-        toolbar: false
-        }
+    const modules =  useMemo(() => ({
+        toolbar:  false,  
+    }), [])
+
     return (
         <ReactQuill
             value={htmlStr}
             readOnly={true}
             modules={modules}
+            id="viewer"
         />
     )
 }

@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useCallback } from 'react'
 
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
@@ -13,7 +13,7 @@ export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
     const quillRef = useRef<ReactQuill>(null);
 
     // 이미지 업로드 핸들러, modules 설정보다 위에 있어야 정상 적용
-    const imageHandler = () => {
+    const imageHandler = useCallback(() => {
         // file input 임의 생성
         const input = document.createElement('input');
         input.setAttribute('type', 'file');
@@ -52,7 +52,7 @@ export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
                 }
             }
         }
-    }
+    }, [])
 
     // useMemo를 사용하지 않고 handler를 등록할 경우 타이핑 할때마다 focus가 벗어남
     const modules = useMemo(() => ({
@@ -93,6 +93,7 @@ export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
             formats={formats} 
             value={htmlStr} 
             placeholder='본문을 입력하세요'
-            onChange={(content, delta, source, editor) => setHtmlStr(editor.getHTML())} />
+            onChange={(content, delta, source, editor) => setHtmlStr(editor.getHTML())} 
+            />
     )
 }
