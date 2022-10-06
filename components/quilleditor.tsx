@@ -94,6 +94,7 @@ export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
             value={htmlStr} 
             placeholder='본문을 입력하세요'
             onChange={(content, delta, source, editor) => setHtmlStr(editor.getHTML())} 
+            className="border"
             />
     )
 }

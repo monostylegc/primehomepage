@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react"
 import dynamic from 'next/dynamic'
 
 const TextEditor = dynamic(() => import('@components/quilleditor'), { ssr: false });
-const TextViewer = dynamic(() => import('@components/quillview'), { ssr: false });
+const TextViewer = dynamic(() => import('@components/quillviewer'), { ssr: false });
 
 export default function Staffs() {
     const [htmlStr, setHtmlStr] = useState<string>('');
@@ -20,6 +20,11 @@ export default function Staffs() {
     return (
         <>
             <TextEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <TextViewer htmlStr={htmlStr} /> 
         </>
     )
