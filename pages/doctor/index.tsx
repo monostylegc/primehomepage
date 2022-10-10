@@ -22,6 +22,7 @@ export default function Staffs() {
             <TextEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
             
             <br/>
+            {htmlStr}
             <br/>
             <br/>
             <br/>

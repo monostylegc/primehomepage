@@ -1,8 +1,52 @@
 import { useRef, useMemo, useCallback } from 'react'
 
-import ReactQuill from 'react-quill'
+import ReactQuill, { Quill } from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import { RangeStatic } from 'quill'
+
+import BlotFormatter from 'quill-blot-formatter'
+
+Quill.register("modules/blotFormatter", BlotFormatter);
+
+const ImageBase = Quill.import('formats/image');
+
+const ATTRIBUTES = [
+  'alt',
+  'height',
+  'width',
+  'style' // This is the added difference that needs to be saved properly
+];
+
+class CustomImage extends ImageBase {
+  declare domNode: any; // Needed declaration for Typescript
+
+  static formats(domNode) {
+    return ATTRIBUTES.reduce((formats, attribute) => {
+      const copy = { ...formats };
+
+      if (domNode.hasAttribute(attribute)) {
+        copy[attribute] = domNode.getAttribute(attribute);
+      }
+
+      return copy;
+    }, {});
+  }
+
+  format(name, value) {
+    if (ATTRIBUTES.indexOf(name) > -1) {
+      if (value) {
+        this.domNode.setAttribute(name, value);
+      } else {
+        this.domNode.removeAttribute(name);
+      }
+    } else {
+      super.format(name, value);
+    }
+  }
+}
+
+Quill.register('formats/image', CustomImage);
+
 
 interface IEditor { 
     htmlStr: string;
@@ -12,8 +56,7 @@ interface IEditor {
 export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
     const quillRef = useRef<ReactQuill>(null);
 
-    // 이미지 업로드 핸들러, modules 설정보다 위에 있어야 정상 적용
-    const imageHandler = useCallback(() => {
+      const imageHandler = useCallback(() => {
         // file input 임의 생성
         const input = document.createElement('input');
         input.setAttribute('type', 'file');
@@ -37,25 +80,27 @@ export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
                 const quillEditor = quillRef.current.getEditor();
                 quillEditor.setSelection(index, 1);
 
-                quillEditor.clipboard.dangerouslyPasteHTML(index,`<img src="/loading.gif" />`);
                 try {
                     // file 데이터 담아서 서버에 전달하여 이미지 업로드
                     const {
                         result : { id }
                     } = await (await fetch(uploadURL, { method: 'POST', body: formData })).json()
                     
+                    const url = `https://imagedelivery.net/IiTY7pTorrOvvCNvIBpczw/${id}/public`
+                    
                     quillEditor.deleteText(index, 1)
 
-                    quillEditor.clipboard.dangerouslyPasteHTML(index,`<img src="https://imagedelivery.net/IiTY7pTorrOvvCNvIBpczw/${id}/public" />`)
+                    //quillEditor.clipboard.dangerouslyPasteHTML(index,`<img src="https://imagedelivery.net/IiTY7pTorrOvvCNvIBpczw/${id}/public" />`)
+                    quillEditor.insertEmbed(index, "image", url)
                 } catch (err) {
                     console.log(err)
                 }
             }
         }
     }, [])
-
     // useMemo를 사용하지 않고 handler를 등록할 경우 타이핑 할때마다 focus가 벗어남
     const modules = useMemo(() => ({
+        blotFormatter: {},
         toolbar: {
             // container에 등록되는 순서대로 tool 배치
             container: [
@@ -67,8 +112,7 @@ export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
                 [{ 'align': [] }, { 'color': [] }, { 'background': [] }], // 정렬, 글씨 색깔, 글씨 배경색 설정
                 ['clean'], // toolbar 설정 초기화 설정
             ],
-            
-            // custom 핸들러 설정
+
             handlers: {
                 image : imageHandler, // 이미지 tool 사용에 대한 핸들러 설정
             },
