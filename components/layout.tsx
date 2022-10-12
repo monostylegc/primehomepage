@@ -1,4 +1,4 @@
-import Nav from "./nav"
+import Nav from "./Nav"
 import FAB from "./fab"
 import Footer from "./footer";
 

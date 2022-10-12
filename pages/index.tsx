@@ -91,8 +91,7 @@ const Home: NextPage = () => {
         <CardA imgurl='/photo/원장님사진.jpg' title='최봉식' subtitle='신경외과전문의' description='뇌 척추질환' link='#'/>
       </ScrollSection>
       
-      <div className='p-8 mt-4 max-w-7xl rounded-lg bg-white mx-auto'>
-        <h2 className='text-5xl text-primary'>오시는 길</h2>
+      <div style={{"height":"500px", "width" : "1000px"}}>
         <div className='mt-4'>
           <Map lat={ 35.10584586911908 } lng={128.9658011123337}/>
         </div>

@@ -1,4 +1,4 @@
-import useKakao from "../hooks/useKakao"
+import useKakao from "../libs/client/useKakao"
 import { useState, useEffect } from "react"
 
 interface MapProps {
@@ -17,6 +17,11 @@ export default function Map({lat, lng}:MapProps) {
     }, [kakao, map, putMarker])
 
     return (
-        <div className="w-full h-72 lg:h-96 rounded-lg" ref={setContainer}></div>
+        <div style={style} ref={setContainer}></div>
     )
+}
+
+const style = {
+  width: 1200,
+  height: 800,
 }
