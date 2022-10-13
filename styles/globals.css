@@ -1,36 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root{
-  --primary:#2abf52;
-  --secondary:rgb(98, 251, 56);
-  --accent:rgb(190, 65, 46);
-  --white:#fff;
-  --light-white:#aaa;
-  --black:#3d3d3d;
-  --light-bg:#bbbbbb;
+@layer base {
+  html {
+    font-family: Noto Sans KR, system-ui, sans-serif;
+  }
 }
 
-*{
-  font-family: 'Noto Sans KR', sans-serif;
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-  outline: none; border:none;
-  text-decoration: none;
-  list-style: none;
-  text-transform: capitalize;
-}
-
-html{
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scroll-padding-top: 8rem;
-}
- 
 ::-webkit-scrollbar{
   height: .5rem;
-  width: 1rem;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track{
@@ -38,14 +19,8 @@ html{
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color: var(--green);
+  background-color:chartreuse;
   border-radius: 5rem;
-}
-
-section{
-  max-width: 1200px;
-  margin:0 auto;
-  padding:2rem;
 }
 
 .ql-container {
@@ -57,14 +32,17 @@ section{
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
 }
 
-@media screen and ( max-width: 810px){
-  html{
-    font-size: 55%;
- }
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
 }
 
-@media screen and ( max-width: 390px){
-  html{
-    font-size: 50%;
- }
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
 }

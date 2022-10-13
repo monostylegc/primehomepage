@@ -1,9 +1,5 @@
 import type { NextPage } from 'next'
 
-import AOS from 'aos'
-import { useEffect } from 'react'
-import "aos/dist/aos.css"
-
 import Layout from '@components/layout'
 import Hero from '@components/hero'
 import Map from '@components/map'
@@ -13,21 +9,13 @@ import CardA from '@components/cardA'
 import Feature from '@components/feature'
 
 const Home: NextPage = () => {
-  useEffect(
-    ()=>{
-        AOS.init({
-            duration: 1000
-        })
-    }
-  ,[])
-
   return (
     <Layout>
       <Hero 
       imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-      title='평생관리' 
-      subtitle='맞춤진료' 
-      description='20년간 같은 자리를 지켜온 병원'/>
+      title='프라임병원' 
+      subtitle='아프지 말고 살아야죠' 
+     />
       
       <Feature 
       title='프라임병원' 
