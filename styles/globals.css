@@ -20,7 +20,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color:chartreuse;
+  background-color:rgb(170, 170, 170);
   border-radius: 5rem;
 }
 

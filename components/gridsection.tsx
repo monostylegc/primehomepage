@@ -1,17 +1,39 @@
+import { motion, Variants } from 'framer-motion'
+
+const variants: Variants = {
+    offscreen: {
+        opacity : 0,
+        y: 100
+    },
+    onscreen: {
+      y: 0,
+      opacity : 1,
+      transition: {
+        type: "spring",
+        duration: 2
+      }
+    }
+  };
+
 interface GridSectionProps {
     title: string;
     description? : string;
     children : React.ReactNode;
 }
 
-export default function GridSection({title,description,children} : GridSectionProps){
+export default function GridSection({title,description, children} : GridSectionProps){
     return (
-        <section className='max-w-7xl bg-white mt-4 p-8 rounded-lg mx-auto'>
-          <h2 className='text-primary text-5xl'>{title}</h2>
-          <p className="text-gray-500 text-md mt-2"> {description }</p>
-          <div className={`mt-4 py-1 gap-4 grid grid-cols-3 lg:grid-cols-5`}>
-            {children}
+      <motion.section 
+      initial="offscreen"
+      whileInView="onscreen"
+      variants={variants}
+      viewport={{once:true}}
+      className="flex flex-col max-w-7xl mx-auto p-6 mb-20 ">
+          <h2 className="text-4xl text-center ">{title}</h2>
+          <p className="mt-2 text-gray-400 text-center serif">{description}</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-10 overflow-y-hidden overflow-x-scroll snap-x">
+              { children }
           </div>
-        </section>
+      </motion.section>
     )
 }

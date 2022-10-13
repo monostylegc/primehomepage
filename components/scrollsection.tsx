@@ -1,4 +1,19 @@
+import { motion, Variants } from 'framer-motion'
 
+const variants: Variants = {
+    offscreen: {
+        opacity : 0,
+        y: 100
+    },
+    onscreen: {
+      y: 0,
+      opacity : 1,
+      transition: {
+        type: "spring",
+        duration: 2
+      }
+    }
+  };
 
 interface ScrollSectionProps {
     title: string;
@@ -8,13 +23,17 @@ interface ScrollSectionProps {
 
 export default function ScrollSection({title,description, children} : ScrollSectionProps){
     return (
-        <section className='max-w-7xl bg-white mt-4 p-8 rounded-lg mx-auto'>
-          <h2 className='text-primary text-5xl'>{title}</h2>
-          <p className="text-gray-500 text-md mt-2"> {description }</p>
-          <div className='mt-4 py-1 flex space-x-8 justify-start 
-          overflow-x-scroll scrollbar-thumb-slate-300 scrollbar-thin'>
-            {children}
+      <motion.section 
+      initial="offscreen"
+      whileInView="onscreen"
+      variants={variants}
+      viewport={{once:true}}
+      className="flex flex-col max-w-7xl mx-auto p-6 mb-20 ">
+          <h2 className="text-4xl text-center ">{title}</h2>
+          <p className="mt-2 text-gray-400 text-center serif">{description}</p>
+          <div className="flex flex-row flex-nowrap gap-8 mt-10 overflow-y-hidden overflow-x-scroll snap-x">
+              { children }
           </div>
-        </section>
+      </motion.section>
     )
 }
