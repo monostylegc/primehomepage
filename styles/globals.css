@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    font-family: Noto Sans KR, system-ui, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-x : hidden;
   }
 }
 
@@ -45,4 +46,8 @@ h2 {
 h3 {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.serif {
+  font-family: 'Noto Serif KR', serif;
 }

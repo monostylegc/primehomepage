@@ -1,16 +1,39 @@
+import { motion, Variants } from 'framer-motion'
 
 interface FeatureProps {
     title : string;
-  
-    description : string;
+    description? : string;
+    children : React.ReactNode;
 }
 
-export default function Feature({title, description}:FeatureProps) {
+const variants: Variants = {
+    offscreen: {
+        opacity : 0,
+        y: 100
+    },
+    onscreen: {
+      y: 0,
+      opacity : 1,
+      transition: {
+        type: "spring",
+        duration: 2
+      }
+    }
+  };
+
+export default function Feature({title, description, children}:FeatureProps) {
     return (
-        <section className="max-w-7xl bg-white m-4 p-8 rounded-lg mx-auto">
-            <h2 className="text-primary text-5xl">{title}</h2>
-           
-            <p className="mt-4 text-gray-600">{description}</p>
-        </section>
+        <motion.section 
+        initial="offscreen"
+        whileInView="onscreen"
+        variants={variants}
+        viewport={{once:true}}
+        className="flex flex-col max-w-7xl mx-auto p-6 mb-12">
+            <h2 className="text-4xl text-center ">{title}</h2>
+            <p className="mt-2 text-gray-400 text-center serif">{description}</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                { children }
+            </div>
+        </motion.section>
     )
 }

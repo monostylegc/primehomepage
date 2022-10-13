@@ -8,8 +8,8 @@ const variants = {
 }
 
 const variants2 = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "100%" },
+    open: { opacity: 1, x: 0,},
+    closed: { opacity: 0, x: "100%", },
   }
 
 export default function Nav(){
@@ -20,9 +20,9 @@ export default function Nav(){
     }
 
     return(
-        <header className="flex flex-col z-50 justify-between items-center p-[24px] h-[80px] bg-white fixed top-0 right-0 left-0 lg:flex-row">
+        <header className="flex flex-col z-50 justify-between items-center p-6 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row">
             <nav className="flex justify-between items-center w-full">
-                <Link href="/"><h3 className="text-[1.2rem] font-bold">PRIME병원</h3></Link>
+                <Link href="/"><h3 className="text-[1.2rem] font-semibold">PRIME병원</h3></Link>
                 <motion.div 
                     animate={menu ? "open" : "closed"}
                     variants={variants}

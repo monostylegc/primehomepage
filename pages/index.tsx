@@ -4,8 +4,7 @@ import Layout from '@components/layout'
 import Hero from '@components/hero'
 import Map from '@components/map'
 import ScrollSection from '@components/scrollsection'
-import CardB from '@components/cardB'
-import CardA from '@components/cardA'
+import Card from '@components/card'
 import Feature from '@components/feature'
 
 const Home: NextPage = () => {
@@ -16,10 +15,14 @@ const Home: NextPage = () => {
       title='프라임병원' 
       subtitle='아프지 말고 살아야죠' 
      />
-      
+
       <Feature 
-      title='프라임병원' 
-      description='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsu will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)' />
+      title='전문 진료' 
+      description='잘하는 것에 집중합니다'>
+        <Card title='목 허리 질환' subtitle="목허리가 아플때" imgurl='https://media.istockphoto.com/photos/cropped-shot-of-an-unrecognizable-businesswoman-standing-alone-in-the-picture-id1324642231?b=1&k=20&m=1324642231&s=170667a&w=0&h=9UbsG2jTgFaAowE0csV_G2xJKJZ9jsbL_8F5uoDoLOE='></Card>
+        <Card title='어깨 무릎 질환' subtitle="어깨무릎이 아플때" imgurl='https://media.istockphoto.com/photos/cropped-shot-of-an-unrecognizable-businesswoman-standing-alone-in-the-picture-id1324642231?b=1&k=20&m=1324642231&s=170667a&w=0&h=9UbsG2jTgFaAowE0csV_G2xJKJZ9jsbL_8F5uoDoLOE='></Card>
+        <Card title='내과질환 및 검진' subtitle="내과질환" imgurl='https://media.istockphoto.com/photos/cropped-shot-of-an-unrecognizable-businesswoman-standing-alone-in-the-picture-id1324642231?b=1&k=20&m=1324642231&s=170667a&w=0&h=9UbsG2jTgFaAowE0csV_G2xJKJZ9jsbL_8F5uoDoLOE='></Card>      
+      </Feature>
       
       <section className='mx-auto max-w-7xl bg-white rounded-lg  m-4 p-8'>
         <h2 className='text-primary text-5xl'>프라임 진료센터</h2>
@@ -59,25 +62,9 @@ const Home: NextPage = () => {
         </div>
       </section>
       
-      <ScrollSection title='이 달의 혜택'> 
-        <CardB imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=31' title='코로나 후유증 진료'  link='#'/>
-        <CardB imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=38' title='통합 간병 서비스'  link='#'/>
-        <CardB imgurl='https://www.disc21.co.kr/img/main/banner1.png' title='간호사 모집' link='#'/>
-      </ScrollSection>
+    
       
-      <ScrollSection title='프라임 의료진'> 
-        <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환'
-        link='#'/>
-        <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환'
-        link='#'/>
-        <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환'
-        link='#'/>
-        <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환'
-        link='#'/>
-        <CardA imgurl='/photo/이기창.jpg' title='이기창' subtitle='신경외과전문의' description='척추질환'
-        link='#'/>
-        <CardA imgurl='/photo/원장님사진.jpg' title='최봉식' subtitle='신경외과전문의' description='뇌 척추질환' link='#'/>
-      </ScrollSection>
+
       
       <div style={{"height":"500px", "width" : "1000px"}}>
         <div className='mt-4'>
