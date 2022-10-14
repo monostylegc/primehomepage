@@ -17,11 +17,7 @@ export default function Map({lat, lng}:MapProps) {
     }, [kakao, map, putMarker])
 
     return (
-        <div style={style} ref={setContainer}></div>
+        <div className="rounded-[20px] w-full h-[50vh]" ref={setContainer}></div>
     )
 }
 
-const style = {
-  width: 1200,
-  height: 800,
-}
