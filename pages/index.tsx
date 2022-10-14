@@ -52,8 +52,8 @@ const Home: NextPage = () => {
       <Card width={200} imgurl='/photo/이기창.jpg' title='이기창' additional='원장' description='신경외과' subtitle='신경외과전문의' link='#'/>
     </ScrollSection>
       
-      <div style={{"height":"500px", "width" : "1000px"}}>
-        <div className='mt-4'>
+      <div>
+        <div>
           <Map lat={ 35.10584586911908 } lng={128.9658011123337}/>
         </div>
       </div>
