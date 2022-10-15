@@ -20,7 +20,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color:rgb(170, 170, 170);
+  background-color:rgba(0, 201, 87, 0.5);
   border-radius: 5rem;
 }
 
@@ -33,20 +33,7 @@
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
 }
 
-h1 {
-  font-size: 4rem;
-  font-weight: bold;
-}
 
-h2 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-h3 {
-  font-size: 2rem;
-  font-weight: bold;
-}
 
 .serif {
   font-family: 'Noto Serif KR', serif;

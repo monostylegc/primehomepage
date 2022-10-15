@@ -6,9 +6,7 @@ import Map from '@components/map'
 import ScrollSection from '@components/scrollsection'
 import Card from '@components/card'
 import Feature from '@components/feature'
-import Testimonial from '../components/testimonial';
-
-import { FaSubway, FaBus } from 'react-icons/fa'
+import Testimonial from '../components/testimonial'
 
 const Home: NextPage = () => {
   return (
@@ -57,76 +55,7 @@ const Home: NextPage = () => {
       <Card width={200} imgurl='/photo/이기창.jpg' title='이기창' additional='원장' description='신경외과' subtitle='신경외과전문의' link='#'/>
     </ScrollSection>
       
-      <div className='flex flex-col max-w-4xl mx-auto p-6 mb-20'>
-        <h1 className="text-4xl flex-1 text-center mb-10">오시는 길</h1>
-        <Map lat={ 35.10584586911908 } lng={128.9658011123337}/>
-      
-        <div className='flex items-center mt-8'>
-          <p className='flex items-center text-lg lg:text-xl ml-2 text-gray-600 w-16 shrink-0'>지하철</p>
-          <div className='flex items-center justify-center ml-4 rounded-full bg-red-500 w-14 h-14 shrink-0'>
-            <p className='text-white text-center text-sm lg:text-base'>1호선</p>
-          </div>
-          <p className=" flex-grow lg:text-lg text-gray-600 ml-10">하단역 4번 출구 앞</p>
-        </div>
-        <div className='flex items-center mt-4'>
-          <p className='flex items-center text-lg lg:text-xl ml-2 text-gray-600 w-16 shrink-0'>버스</p>
-          <div className='flex items-center justify-center ml-4 rounded-full bg-green-700 w-14 h-14 shrink-0'>
-            <p className='text-white text-center text-sm lg:text-base'>일반</p>
-          </div>
-          <div className="flex flex-grow lg:text-lg items-center ml-10 gap-x-10 gap-y-2 flex-wrap">
-            <span className='text-gray-600'>3</span>
-            <span className='text-gray-600'>55</span>
-            <span className='text-gray-600'>58</span>
-            <span className='text-gray-600'>58-2</span>
-            <span className='text-gray-600'>68</span>
-            <span className='text-gray-600'>168</span>
-            <span className='text-gray-600'>520</span>
-          </div>
-        </div> 
-        <div className='flex items-center mt-4'>
-          <p className='flex items-center text-lg lg:text-xl ml-2 text-gray-600 w-16 shrink-0'></p>
-          <div className='flex items-center justify-center ml-4 rounded-full bg-red-800 w-14 h-14 shrink-0'>
-            <p className='text-white text-center text-sm lg:text-base'>급행</p>
-          </div>
-          <div className="flex flex-grow lg:text-lg items-center ml-10 gap-x-10 gap-y-2 flex-wrap">
-            <span className='text-gray-600'>1005</span>
-            <span className='text-gray-600'>2000</span>
-          </div>
-        </div>
-        <div className='flex items-center mt-4'>
-          <p className='flex items-center text-lg lg:text-xl ml-2 text-gray-600 w-16 shrink-0'></p>
-          <div className='flex items-center justify-center ml-4 rounded-full bg-blue-800 w-14 h-14 shrink-0'>
-            <p className='text-white text-center text-sm lg:text-base'>좌석</p>
-          </div>
-          <div className="flex flex-grow lg:text-lg items-center ml-10 gap-x-10 gap-y-2 flex-wrap">
-            <span className='text-gray-600'>58-1</span>
-            <span className='text-gray-600'>221</span>
-            <span className='text-gray-600'>2000</span>
-          </div>
-        </div>
-        <div className='flex items-start mt-4'>
-          <p className='flex items-center text-lg lg:text-xl ml-2 text-gray-600 w-16 shrink-0'></p>
-          <div className='flex items-center justify-center ml-4 rounded-full bg-green-500 w-14 h-14 shrink-0'>
-            <p className='text-white text-center text-sm lg:text-base'>마을</p>
-          </div>
-          <div className="flex flex-grow lg:text-lg items-center ml-10 gap-x-10 gap-y-2 flex-wrap">
-            <span className='text-gray-600'>강서구 3</span>
-            <span className='text-gray-600'>강서구 7</span>
-            <span className='text-gray-600'>강서구 9</span>
-            <span className='text-gray-600'>강서구 9-1</span>
-            <span className='text-gray-600'>강서구 9-2</span>
-            <span className='text-gray-600'>강서구 12</span>
-            <span className='text-gray-600'>강서구 13</span>
-            <span className='text-gray-600'>강서구 14</span>
-            <span className='text-gray-600'>강서구 15</span>
-            <span className='text-gray-600'>강서구 16</span>
-            <span className='text-gray-600'>강서구 17</span>
-            <span className='text-gray-600'>강서구 20</span>
-            <span className='text-gray-600'>강서구 21</span>
-            <span className='text-gray-600'>사하구 10</span>
-          </div>
-        </div>            
-      </div>
+    <Map />
       
     </Layout>
   )

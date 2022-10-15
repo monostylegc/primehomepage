@@ -31,7 +31,7 @@ export default function ScrollSection({title,description, children} : ScrollSect
       className="flex flex-col max-w-4xl mx-auto p-6 mb-20 ">
           <h2 className="text-4xl text-center ">{title}</h2>
           <p className="mt-2 text-gray-400 text-center serif">{description}</p>
-          <div className="flex flex-row flex-nowrap gap-12 mt-10 overflow-y-hidden overflow-x-scroll snap-x">
+          <div className="flex flex-row flex-nowrap gap-12 mt-10 overflow-y-hidden overflow-x-scroll snap-x scrollbar-track-transparent">
               { children }
           </div>
       </motion.section>
