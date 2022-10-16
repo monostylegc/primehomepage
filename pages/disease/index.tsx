@@ -17,6 +17,32 @@ const DiseaseInfo: NextPage = () => {
                 <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
                 <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
                 <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+            </GridSection>
+
+            <GridSection title='목 허리 질환' description='이렇게 아프면 이런 질환'>
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+            </GridSection>
+
+            <GridSection title='목 허리 질환' description='이렇게 아프면 이런 질환'>
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
+                <SquareCard title='무릎통증' link='' imgurl='https://cdn.pixabay.com/photo/2017/09/20/14/59/knee-2768834_960_720.jpg' />
             </GridSection>
         </Layout>
     )

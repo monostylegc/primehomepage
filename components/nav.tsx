@@ -22,7 +22,7 @@ export default function Nav(){
     return(
         <header className="flex flex-col z-50 justify-between items-center p-6 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row">
             <nav className="flex justify-between items-center w-full">
-                <Link href="/"><h3 className="text-[1.2rem] font-semibold">PRIME병원</h3></Link>
+                <Link href="/"><h3 className="text-[1.2rem] font-semibold cursor-pointer">PRIME병원</h3></Link>
                 <motion.div 
                     animate={menu ? "open" : "closed"}
                     variants={variants}
@@ -45,10 +45,10 @@ export default function Nav(){
                 <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">진료안내</li>
                 </Link>
-                <Link href="#">
+                <Link href="/disease">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">증상별질환안내</li>
                 </Link>
-                <Link href="#">
+                <Link href="/treatment">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">치료안내</li>
                 </Link>
                 <Link href="#">
@@ -64,10 +64,10 @@ export default function Nav(){
                 <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">진료안내</li>
                 </Link>
-                <Link href="#">
+                <Link href="/disease">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">증상별질환안내</li>
                 </Link>
-                <Link href="#">
+                <Link href="/treatment">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">치료안내</li>
                 </Link>
                 <Link href="#">
