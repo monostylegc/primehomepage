@@ -45,17 +45,19 @@ export default function Nav(){
                 <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">진료안내</li>
                 </Link>
-                <Link href="/disease">
+                <Link href="/diseaseinfo">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">증상별질환안내</li>
                 </Link>
-                <Link href="/treatment">
+                <Link href="/treatmentinfo">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">치료안내</li>
                 </Link>
                 <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">프라임건강칼럼</li>
                 </Link>
+                <Link href="#"><li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">물어보기</li>
+                </Link>  
                 <Link href="#"><li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">로그인</li>
-                </Link>                        
+                </Link>                      
             </ul>
             <motion.ul
             variants={variants2}
@@ -64,18 +66,21 @@ export default function Nav(){
                 <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">진료안내</li>
                 </Link>
-                <Link href="/disease">
+                <Link href="/diseaseinfo">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">증상별질환안내</li>
                 </Link>
-                <Link href="/treatment">
+                <Link href="/treatmentinfo">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">치료안내</li>
                 </Link>
                 <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">프라임건강칼럼</li>
                 </Link>
                 <Link href="#">
+                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">물어보기</li>
+                </Link>
+                <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">로그인</li>
-                </Link>                        
+                </Link>                         
             </motion.ul>
         </header>
     )

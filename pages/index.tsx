@@ -7,6 +7,7 @@ import ScrollSection from '@components/scrollsection'
 import Card from '@components/card'
 import Feature from '@components/feature'
 import Testimonial from '../components/testimonial'
+import Pivot from '@components/pivot'
 
 const Home: NextPage = () => {
   return (
@@ -54,7 +55,12 @@ const Home: NextPage = () => {
       <Card width={200} imgurl='/photo/이기창.jpg' title='이기창' additional='원장' description='신경외과' subtitle='신경외과전문의' link='#'/>
       <Card width={200} imgurl='/photo/이기창.jpg' title='이기창' additional='원장' description='신경외과' subtitle='신경외과전문의' link='#'/>
     </ScrollSection>
-      
+
+    <Pivot title='프라임 건강칼럼' description='치료보다는 예방이 먼저다. 건강 칼럼에서 양질의 건강관리 정보를 얻어가셔요' link="/column"/>
+
+    <Pivot title='문의하세요' description='우리 프라임 병원에서는 환자분의 증상에 대한 고민을 들어드리고 있습니다. 
+    상담하고 싶은 것이 있다면 문의하세요. 우리 프라임 병원 의료진이 직접 답해드립니다.' link="/question"/>
+
     <Map />
       
     </Layout>

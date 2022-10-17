@@ -121,6 +121,7 @@ model DiseaseInfo {
   id Int @id @default(autoincrement())
   title String
   category String
+  thumbnailUrl String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   content String @db.LongText
@@ -130,6 +131,7 @@ model TreatmentInfo {
   id Int @id @default(autoincrement())
   title String
   category String
+  thumbnailUrl String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   content String @db.LongText
@@ -138,6 +140,7 @@ model TreatmentInfo {
 model HealthInfo {
   id Int @id @default(autoincrement())
   title String
+  thumbnailUrl String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   content String @db.LongText
