@@ -15,7 +15,7 @@ interface ConfigType {
 }
 
 export default function withHandler 
-({ methods,isPrivate = true, handler }: ConfigType) 
+({ methods, isPrivate = true, handler }: ConfigType) 
 {
     return async function 
     (req: NextApiRequest, res: NextApiResponse): Promise<any> 

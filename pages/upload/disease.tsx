@@ -26,7 +26,7 @@ interface UploadDiseaseInfotMutation {
 const Upload: NextPage = () => {
     const router = useRouter();
     const { register, handleSubmit, watch } = useForm<UploadDiseaseInfoForm>();
-    const [uploadProduct, {loading, data}] = useMutation("/api/diseaseinfo")
+    const [ uploadDiseaseInfo, {loading, data} ] = useMutation<UploadDiseaseInfotMutation>("/api/diseaseinfo")
     
     const [htmlStr, setHtmlStr] = useState<string>('');
 
@@ -34,14 +34,20 @@ const Upload: NextPage = () => {
         if (loading) return;
         if (thumbnail && thumbnail.length > 0) {
             const { uploadURL } = await (await fetch(`/api/files`)).json();
-            const form = new FormData();
-            form.append('file', thumbnail[0], title);
-            const { result: { id } } = await (await fetch(uploadURL, { method: 'POST', body: form })).json();
+            const formData = new FormData();
+            formData.append('file', thumbnail[0]);
+            const {
+                result : { id }
+            } = await (await fetch(uploadURL, { method: 'POST', body: formData })).json()
+            console.log(id)
             content = htmlStr
-            uploadProduct({ title, catergory, content , thumbnailUrl: `https://imagedelivery.net/IiTY7pTorrOvvCNvIBpczw/${id}/public`});
+
+            uploadDiseaseInfo({ title, catergory, content, thumbnailId :id });
+            console.log(data)
         } else {
             content = htmlStr
-            uploadProduct({ title, catergory, content });
+            uploadDiseaseInfo({ title, catergory, content })
+            console.log(data)
         }
     }
 
@@ -96,7 +102,7 @@ const Upload: NextPage = () => {
                 
                 <TextEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}/>
 
-                <Button text="Upload" />
+                <Button text="Upload" loading={loading}/>
             </form>
         </div>
     )
