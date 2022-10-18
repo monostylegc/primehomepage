@@ -10,14 +10,14 @@ import { useState, useEffect } from 'react';
 
 const TextEditor = dynamic(() => import('@components/quilleditor'), { ssr: false });
 
-interface UploadDiseaseInfoForm {
+interface UploadTreatmentInfoForm {
     title: string;
     catergory: string;
     image: FileList;
     content: string;
 }
 
-interface UploadDiseaseInfotMutation {
+interface UploadTreatmentInfotMutation {
     ok: boolean;
     diseaseinfo : DiseaseInfo;
 }
@@ -25,12 +25,12 @@ interface UploadDiseaseInfotMutation {
 
 const Upload: NextPage = () => {
     const router = useRouter();
-    const { register, handleSubmit, watch } = useForm<UploadDiseaseInfoForm>();
-    const [ uploadDiseaseInfo, {loading : mutationLoading, data} ] = useMutation<UploadDiseaseInfotMutation>("/api/diseaseinfo")
+    const { register, handleSubmit, watch } = useForm<UploadTreatmentInfoForm>();
+    const [ uploadDiseaseInfo, {loading : mutationLoading, data} ] = useMutation<UploadTreatmentInfotMutation>("/api/treatmentinfo")
     const [ loading, setLoading ] = useState(false)
     const [htmlStr, setHtmlStr] = useState<string>('');
 
-    const onValid = async ({ title, catergory, image, content }: UploadDiseaseInfoForm) => {
+    const onValid = async ({ title, catergory, image, content }: UploadTreatmentInfoForm) => {
         if (loading) return;
         if (image && image.length > 0) {
             try {

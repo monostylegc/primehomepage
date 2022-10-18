@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^4.4.0",
+    "dompurify": "^2.4.0",
     "framer-motion": "^7.5.3",
     "next": "12.2.5",
     "next-auth": "^4.12.0",

@@ -69,25 +69,7 @@ model Doctor {
   name          String
   part          String
   description   String
-  carriers      Carrier[]
-  workSchedule  WorkSchedule?
-  offDay        OffDay?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt 
-}
-
-model Carrier{
-  id            Int @id @default(autoincrement())
-  title         String
-  date          DateTime?
-  doctor        Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade )
-  doctorId      Int @unique
-}
-
-model WorkSchedule {
-  id            Int @id @default(autoincrement())
-  doctor        Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade)
-  doctorId      Int @unique
+  carriers      String  @db.MediumText
   monAm         Boolean
   monPm         Boolean
   tueAm         Boolean
@@ -99,12 +81,6 @@ model WorkSchedule {
   friAm         Boolean
   friPm         Boolean
   satAm         Boolean
-}
-
-model OffDay{
-  id            Int @id @default(autoincrement())
-  doctor        Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade)
-  doctorId      Int @unique
   date0         DateTime?
   date1         DateTime?
   date2         DateTime?
@@ -115,13 +91,15 @@ model OffDay{
   date7         DateTime?
   date8         DateTime?
   date9         DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt 
 }
 
 model DiseaseInfo {
   id Int @id @default(autoincrement())
   title String
   category String
-  thumbnail String?
+  image String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   content String @db.LongText
@@ -131,7 +109,7 @@ model TreatmentInfo {
   id Int @id @default(autoincrement())
   title String
   category String
-  thumbnail String?
+  image String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   content String @db.LongText
@@ -141,7 +119,7 @@ model HealthInfo {
   id Int @id @default(autoincrement())
   title String
   category String
-  thumbnail String?
+  image String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   content String @db.LongText

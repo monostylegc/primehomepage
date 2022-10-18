@@ -1,6 +1,7 @@
 import withHandler, { ResponseType } from '@libs/server/withhandler';
 import { NextApiRequest, NextApiResponse } from 'next';
 import client from '@libs/client';
+
 //import { getSession } from 'next-auth/react';
 
 async function handler(
@@ -27,14 +28,14 @@ async function handler(
         title : title,
         category : catergory,
         content : content,
-        thumbnail : thumbnailId
+        image : thumbnailId
       },
-    });
+    })
 
-    return res.json({
+    res.json({
       ok: true,
       diseaseInfo,
-    });
+    })
   }
 }
 
