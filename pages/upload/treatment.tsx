@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { DiseaseInfo } from "@prisma/client";
+import { TreatmentInfo } from "@prisma/client";
 import Button from '@components/button';
 import Input from '@components/input';
 import { useRouter } from 'next/router';
@@ -19,14 +19,14 @@ interface UploadTreatmentInfoForm {
 
 interface UploadTreatmentInfotMutation {
     ok: boolean;
-    diseaseinfo : DiseaseInfo;
+    treatmentinfo : TreatmentInfo;
 }
 
 
 const Upload: NextPage = () => {
     const router = useRouter();
     const { register, handleSubmit, watch } = useForm<UploadTreatmentInfoForm>();
-    const [ uploadDiseaseInfo, {loading : mutationLoading, data} ] = useMutation<UploadTreatmentInfotMutation>("/api/treatmentinfo")
+    const [ uploadTreatmentInfo, {loading : mutationLoading, data} ] = useMutation<UploadTreatmentInfotMutation>("/api/treatmentinfo")
     const [ loading, setLoading ] = useState(false)
     const [htmlStr, setHtmlStr] = useState<string>('');
 
@@ -43,7 +43,7 @@ const Upload: NextPage = () => {
                 } = await (await fetch(uploadURL, { method: 'POST', body: formData })).json()
                 
                 content = htmlStr
-                uploadDiseaseInfo({ title, catergory, content, imageId :id });
+                uploadTreatmentInfo({ title, catergory, content, imageId :id });
                 setLoading(false)
             }
             catch (e) {
@@ -53,7 +53,7 @@ const Upload: NextPage = () => {
         } else {
             setLoading(true)
             content = htmlStr
-            uploadDiseaseInfo({ title, catergory, content })
+            uploadTreatmentInfo({ title, catergory, content })
             setLoading(true)
             console.log(data)
         }

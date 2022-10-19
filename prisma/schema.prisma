@@ -70,6 +70,7 @@ model Doctor {
   part          String
   description   String
   carriers      String  @db.MediumText
+  society       String  @db.MediumText
   monAm         Boolean
   monPm         Boolean
   tueAm         Boolean

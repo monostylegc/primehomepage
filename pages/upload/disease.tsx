@@ -31,13 +31,17 @@ const Upload: NextPage = () => {
     const [htmlStr, setHtmlStr] = useState<string>('');
 
     const onValid = async ({ title, catergory, image, content }: UploadDiseaseInfoForm) => {
-        if (loading) return;
+        if (loading) return
+
         if (image && image.length > 0) {
             try {
                 setLoading(true)
                 const { uploadURL } = await (await fetch(`/api/files`)).json();
+                
                 const formData = new FormData();
+                
                 formData.append('file', image[0],title);
+                
                 const {
                     result : { id }
                 } = await (await fetch(uploadURL, { method: 'POST', body: formData })).json()

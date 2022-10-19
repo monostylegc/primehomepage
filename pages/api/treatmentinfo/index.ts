@@ -9,10 +9,10 @@ async function handler(
   res: NextApiResponse<ResponseType>
 ) {
   if (req.method === 'GET') {
-    const diseaseInfos = await client.diseaseInfo.findMany({});
+    const treatmentInfos = await client.treatmentInfo.findMany({});
     res.json({
       ok: true,
-      diseaseInfos,
+      treatmentInfos,
     });
   }
   if (req.method === 'POST') {
@@ -23,7 +23,7 @@ async function handler(
     const {
       body: { title, catergory, content, imageId },
     } = req;
-    const diseaseInfo = await client.diseaseInfo.create({
+    const treatmentInfo = await client.treatmentInfo.create({
       data: {
         title : title,
         category : catergory,
@@ -34,7 +34,7 @@ async function handler(
 
     res.json({
       ok: true,
-      diseaseInfo,
+      treatmentInfo,
     })
   }
 }
