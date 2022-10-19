@@ -50,7 +50,7 @@ export default function Footer(){
                     <p className="text-sm text-gray-600">평 일 : 09:00 ~ 18:00 (점심 12:30 ~ 13:30)</p>
                     <p className="text-sm text-gray-600">토요일 : 09:00 ~ 13:00 일요일 : 휴 진  </p>              
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-xs text-gray-600">
                     <p>부산광역시 사하구 낙동남로 1410 프라임병원</p>      
                     <p>1410, Nakdongnam-ro, Saha-gu</p>
                     <p>Busan, Republic of Korea</p>          

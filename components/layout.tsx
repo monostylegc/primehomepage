@@ -1,5 +1,6 @@
 import Nav from "./nav"
 import Footer from "./footer";
+import FAB from "./fab";
 
 interface LayoutProps{
     children: React.ReactNode;
@@ -13,6 +14,7 @@ export default function Layout({children}:LayoutProps){
             <div className="mt-[80px]">
               {children}
             </div>
+            <FAB />
             <Footer />
         </>
     )
