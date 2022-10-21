@@ -20,14 +20,22 @@ export default function Nav(){
     }
 
     return(
-        <header className="flex flex-col z-50 justify-between items-center p-6 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row">
+        <header className="flex flex-col z-50 justify-between items-center p-5 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row">
             <nav className="flex justify-between items-center w-full">
-                <Link href="/"><h3 className="text-[1.2rem] font-semibold cursor-pointer">PRIME병원</h3></Link>
+                <Link href="/">
+                    <div className="flex items-center cursor-pointer space-x-1 shrink-0">
+                        <img src="/logo.png" alt="logo" className="w-12 h-10 object-contain" />
+                        <div className="font-semibold">
+                            <h3 className="text-[1.2rem] text-primary"><span className="text-secondary">프라임</span>병원</h3>
+                            <p className="text-gray-400 text-xs hidden md:flex">PRIMEHOSPITAL</p>    
+                        </div>
+                    </div>
+                </Link>
                 <motion.div 
                     animate={menu ? "open" : "closed"}
                     variants={variants}
                 >
-                    <button onClick={toggleMenu} className="w-8 h-8 lg:hidden">
+                    <button onClick={toggleMenu} className="w-8 h-8 lg:hidden hover:text-secondary">
                         {
                             menu?
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">

@@ -45,6 +45,13 @@ input[type=number] {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
 }
 
+.ql-snow {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
+.ql-font-serif {
+  font-family: 'Noto Serif KR', serif !important;
+}
+
 .serif {
   font-family: 'Noto Serif KR', serif;
 }

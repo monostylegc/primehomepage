@@ -78,8 +78,8 @@ const Upload: NextPage = () => {
                 <Input register={register('title', { required: true })} required label="Title" name="title" type="text" />
                 <div className='flex flex-col'>
                     <label htmlFor="category" className="mb-1 block text-sm font-medium text-gray-600">Category</label>
-                    <div className='rounded-md border border-gray-300 shadow-sm'>
-                        <select {...register("catergory")} className="text-sm w-full text-gray-600 py-2.5 px-1 rounded-md">
+                    <div className='border-b border-gray-300 '>
+                        <select {...register("catergory")} className="text-sm w-full text-gray-600 py-2.5 px-1 border-b">
                             <option value="ns" >NS</option>
                             <option value="os">OS</option>
                             <option value="im">IM</option>

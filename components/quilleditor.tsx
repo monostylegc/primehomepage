@@ -104,7 +104,7 @@ export default function Editor({ htmlStr, setHtmlStr} : IEditor) {
         toolbar: {
             // container에 등록되는 순서대로 tool 배치
             container: [
-                [{ 'font': [] }], // font 설정
+                [{ font: [] }], // font 설정
                 [{ 'header': [1, 2, 3, 4, 5, 6, false] }], // header 설정
                 ['bold', 'italic', 'underline','strike', 'blockquote', 'code-block'], // 굵기, 기울기, 밑줄 등 부가 tool 설정
                 [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}], // 리스트, 인덴트 설정
