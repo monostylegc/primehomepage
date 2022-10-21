@@ -13,7 +13,7 @@ interface BookingForm {
 
 const Booking: NextPage = () => {
     const router = useRouter();
-    const { register, handleSubmit, watch } = useForm<BookingForm>();
+    const { register, handleSubmit } = useForm<BookingForm>();
 
     const onValid = async ({} : BookingForm ) => {
 

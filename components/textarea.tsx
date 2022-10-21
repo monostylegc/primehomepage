@@ -20,7 +20,7 @@ export default function TextArea ({ label, name, register, ...rest }: TextAreaPr
             ) : null}
             <textarea
                 id={name}
-                className="mt-1 shadow-sm w-full focus:ring-secondary rounded-md border-gray-300 focus:border-secondary"
+                className="mt-1 w-full focus:ring-secondary border-gray-300 focus:border-secondary"
                 rows={4}
                 {...rest}
                 {...register}

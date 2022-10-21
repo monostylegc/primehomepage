@@ -37,7 +37,7 @@ export default function Card({imgurl, title, subtitle,additional,description, li
         className='flex flex-col shrink-0 snap-center'
         style={{"width": width }}
         >
-            <img src={imgurl} className="w-full rounded-[20px] object-cover aspect-[4/5]" />
+            <img src={imgurl} className="w-full object-cover aspect-[4/5]" />
             <div className="mt-3">
                 <div className='flex items-baseline justify-between'>
                     <h4 className="text-xl text-gray-800 font-bold">{title}

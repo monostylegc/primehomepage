@@ -29,9 +29,9 @@ export default function SquareCard({imgurl, title, link } : CardProps ) {
         // whileInView="onscreen"
         // variants={variants}
         // viewport={{once:true}}
-        className='flex flex-col rounded-3xl justify-end  aspect-square snap-center 
+        className='flex flex-col justify-end  aspect-square snap-center 
         relative bg-gradient-to-b from-transparent to-gray-800 transition hover:scale-105 cursor-pointer'>
-            <img src={imgurl} className="absolute rounded-3xl w-full h-full object-cover mix-blend-overlay -z-10" />
+            <img src={imgurl} className="absolute  w-full h-full object-cover mix-blend-overlay -z-10" />
             <p className='text-white text-center mb-2'>{title}</p>
         </div>
     )
