@@ -9,7 +9,7 @@ const variants = {
 
 const variants2 = {
     open: { opacity: 1, x: 0,},
-    closed: { opacity: 0, x: "100%", },
+    closed: { opacity: 0, x: "100%"  },
   }
 
 export default function Nav(){
@@ -24,11 +24,7 @@ export default function Nav(){
             <nav className="flex justify-between items-center w-full">
                 <Link href="/">
                     <div className="flex items-center cursor-pointer space-x-1 shrink-0">
-                        <img src="/logo.png" alt="logo" className="w-12 h-10 object-contain" />
-                        <div className="font-semibold">
-                            <h3 className="text-[1.2rem] text-primary"><span className="text-secondary">프라임</span>병원</h3>
-                            <p className="text-gray-400 text-xs hidden md:flex">PRIMEHOSPITAL</p>    
-                        </div>
+                        <img src="/photo/logo.png" alt="logo" className="w-36 lg:w-48" />
                     </div>
                 </Link>
                 <motion.div 
@@ -49,46 +45,82 @@ export default function Nav(){
                     </button>
                 </motion.div>
             </nav>
-            <ul className="hidden gap-6 lg:flex lg:flex-row shrink-0">
+            <ul className="hidden gap-6 lg:flex lg:flex-row shrink-0 text-gray-700">
                 <Link href="#">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">진료안내</li>
+                    <li className=" cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">
+                        진료안내
+                    </li>
                 </Link>
                 <Link href="/">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">증상별질환안내</li>
+                    <li className="cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">
+                        척추센터    
+                    </li>
                 </Link>
                 <Link href="/">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">치료안내</li>
+                    <li className="cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">
+                        관절센터
+                    </li>
                 </Link>
                 <Link href="#">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">프라임건강칼럼</li>
+                    <li className="cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">
+                        내과센터
+                    </li>
                 </Link>
-                <Link href="#"><li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">물어보기</li>
-                </Link>  
-                <Link href="#"><li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">로그인</li>
-                </Link>                      
+                <Link href="#">
+                    <li className="cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">
+                        치료센터
+                    </li>
+                </Link>
+                <Link href="#">
+                    <li className="cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">
+                        종합검진센터
+                    </li>
+                </Link>
+                <Link href="#">
+                    <li className="cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">
+                        알림마당
+                    </li>
+                </Link>   
             </ul>
             <motion.ul
             variants={variants2}
             animate={menu?"open":"closed"}
-            className="flex flex-col gap-8 p-4 text-right bg-white w-[100vw] lg:hidden shrink-0">
-                <Link href="#">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">진료안내</li>
+            className="flex flex-col text-center mt-2 bg-white w-[100vw] lg:hidden shrink-0">
+               <Link href="#">
+                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                        진료안내
+                    </li>
                 </Link>
                 <Link href="/">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">증상별질환안내</li>
+                    <li className="cursor-pointer transition-all duration-200 rounded-md p-4 hover:text-primary hover:bg-gray-200">
+                        척추센터    
+                    </li>
                 </Link>
                 <Link href="/">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">치료안내</li>
+                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                        관절센터
+                    </li>
                 </Link>
                 <Link href="#">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">프라임건강칼럼</li>
+                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                        내과센터
+                    </li>
                 </Link>
                 <Link href="#">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">물어보기</li>
+                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                        치료센터
+                    </li>
                 </Link>
                 <Link href="#">
-                    <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">로그인</li>
-                </Link>                         
+                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                        종합검진센터
+                    </li>
+                </Link>
+                <Link href="#">
+                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                        알림마당
+                    </li>
+                </Link>   
             </motion.ul>
         </header>
     )
