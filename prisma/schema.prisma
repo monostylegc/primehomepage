@@ -52,7 +52,6 @@ model User {
 
 enum Role {
   ADMIN
-  DOCTOR 
   USER
 }
 
@@ -64,64 +63,6 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Doctor {
-  id            Int @id @default(autoincrement())
-  name          String
-  part          String
-  description   String
-  carriers      String  @db.MediumText
-  society       String  @db.MediumText
-  monAm         Boolean
-  monPm         Boolean
-  tueAm         Boolean
-  tuePm         Boolean
-  wedAm         Boolean
-  wedPm         Boolean
-  thrAm         Boolean
-  thrPm         Boolean
-  friAm         Boolean
-  friPm         Boolean
-  satAm         Boolean
-  date0         DateTime?
-  date1         DateTime?
-  date2         DateTime?
-  date3         DateTime?
-  date4         DateTime?
-  date5         DateTime?
-  date6         DateTime?
-  date7         DateTime?
-  date8         DateTime?
-  date9         DateTime?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt 
-}
-
-model DiseaseInfo {
+model Reservation {
   id Int @id @default(autoincrement())
-  title String
-  category String
-  image String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  content String @db.LongText
-}
-
-model TreatmentInfo {
-  id Int @id @default(autoincrement())
-  title String
-  category String
-  image String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  content String @db.LongText
-}
-
-model HealthInfo {
-  id Int @id @default(autoincrement())
-  title String
-  category String
-  image String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  content String @db.LongText
 }

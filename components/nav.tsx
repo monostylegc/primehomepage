@@ -53,10 +53,10 @@ export default function Nav(){
                 <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">진료안내</li>
                 </Link>
-                <Link href="/diseaseinfo">
+                <Link href="/">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">증상별질환안내</li>
                 </Link>
-                <Link href="/treatmentinfo">
+                <Link href="/">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">치료안내</li>
                 </Link>
                 <Link href="#">
@@ -74,10 +74,10 @@ export default function Nav(){
                 <Link href="#">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">진료안내</li>
                 </Link>
-                <Link href="/diseaseinfo">
+                <Link href="/">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">증상별질환안내</li>
                 </Link>
-                <Link href="/treatmentinfo">
+                <Link href="/">
                     <li className="text-gray-500 cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105 hover:-translate-x-10">치료안내</li>
                 </Link>
                 <Link href="#">
