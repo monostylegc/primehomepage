@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { useState } from "react"
-import { motion } from "framer-motion";
+import { cls } from "@libs/client/utils";
+import { useState } from "react";
 
 const variants = {
     open: { rotate : 90 },
@@ -27,9 +27,8 @@ export default function Nav(){
                         <img src="/photo/logo.png" alt="logo" className="w-36 lg:w-48" />
                     </div>
                 </Link>
-                <motion.div 
-                    animate={menu ? "open" : "closed"}
-                    variants={variants}
+                <div 
+                   className={cls(menu ? "transition duration-200" : "rotate-180")}
                 >
                     <button onClick={toggleMenu} className="w-8 h-8 lg:hidden hover:text-secondary">
                         {
@@ -43,7 +42,7 @@ export default function Nav(){
                             </svg>
                         }
                     </button>
-                </motion.div>
+                </div>
             </nav>
             <ul className="hidden gap-6 lg:flex lg:flex-row shrink-0 text-gray-700">
                 <Link href="#">
@@ -82,12 +81,9 @@ export default function Nav(){
                     </li>
                 </Link>   
             </ul>
-            <motion.ul
-            layout
-            variants={variants2}
-            animate={menu?"open":"closed"}
-            //transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-            className="flex flex-col text-center mt-2 bg-white w-[100vw] lg:hidden shrink-0">
+            <ul 
+            className={cls("flex flex-col text-center mt-2 bg-white w-[100vw] lg:hidden shrink-0 transition-all duration-200", 
+            menu? "clipopen" : "clipclose")}>
                <Link href="#">
                     <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
                         진료안내
@@ -123,7 +119,7 @@ export default function Nav(){
                         알림마당
                     </li>
                 </Link>   
-            </motion.ul>
+            </ul>
         </header>
     )
 }
