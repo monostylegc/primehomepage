@@ -36,21 +36,24 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.ql-container {
-  border : none !important;
-}
 
-.ql-editor:focus {
-  border: 1px solid #80bdff !important;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+/* .swiper-pagination-bullet { 
+  width: 12px !important; 
+  height: 12px !important; 
+  background: transparent !important; 
+  border: 1px solid rgb(23, 189, 84) !important; 
+  opacity: 1 !important;
+  top: 10px !important;
 }
+.swiper-pagination-bullet-active { 
+  width: 40px !important; 
+  transition: width .5s !important; 
+  border-radius: 5px !important; 
+  background: rgb(36, 145, 24) !important; 
+  border: 1px solid transparent !important; 
+  top : 10px !important;
+} */
 
-.ql-snow {
-  font-family: 'Noto Sans KR', sans-serif !important;
-}
-.ql-font-serif {
-  font-family: 'Noto Serif KR', serif !important;
-}
 
 .serif {
   font-family: 'Noto Serif KR', serif;

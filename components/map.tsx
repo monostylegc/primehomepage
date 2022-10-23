@@ -17,7 +17,7 @@ function Map({lat, lng}:MapProps) {
     }, [kakao, map, putMarker])
 
     return (
-        <div className="rounded-[20px] w-full h-[50vh]" ref={setContainer}></div>
+        <div className="rounded-lg w-full h-[50vh]" ref={setContainer}></div>
     )
 }
 

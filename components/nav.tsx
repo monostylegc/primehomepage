@@ -8,9 +8,9 @@ const variants = {
 }
 
 const variants2 = {
-    open: { opacity: 1, x: 0,},
-    closed: { opacity: 0, x: "100%"  },
-  }
+    open: { opacity: 1, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"},
+    closed: { opacity: 0, clipPath : "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+}
 
 export default function Nav(){
     const [menu, setMenu] = useState(false)
@@ -83,8 +83,10 @@ export default function Nav(){
                 </Link>   
             </ul>
             <motion.ul
+            layout
             variants={variants2}
             animate={menu?"open":"closed"}
+            //transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             className="flex flex-col text-center mt-2 bg-white w-[100vw] lg:hidden shrink-0">
                <Link href="#">
                     <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">

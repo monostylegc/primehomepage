@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({title, subtitle, imgurl} : HeroProps) {
     return(
-        <section className="flex flex-col justify-center items-center w-full h-[90vh] relative mb-20">
+        <section className="relative flex flex-col justify-center items-center w-full h-[80vh]">
             <img src={ imgurl } alt='main img' className="w-full h-full object-cover absolute -z-10"/>
             <h1 className="text-white text-6xl font-bold">{ title }</h1>
             <h3 className="text-gray-200 text-4xl my-8">{ subtitle }</h3>
