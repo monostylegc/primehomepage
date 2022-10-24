@@ -48,11 +48,11 @@ input[type=number] {
 }
 
 
-/* .swiper-pagination-bullet { 
+.swiper-pagination-bullet { 
   width: 12px !important; 
   height: 12px !important; 
   background: transparent !important; 
-  border: 1px solid rgb(23, 189, 84) !important; 
+  border: 1px solid #fff !important; 
   opacity: 1 !important;
   top: 10px !important;
 }
@@ -60,12 +60,14 @@ input[type=number] {
   width: 40px !important; 
   transition: width .5s !important; 
   border-radius: 5px !important; 
-  background: rgb(36, 145, 24) !important; 
+  background: #fff !important; 
   border: 1px solid transparent !important; 
   top : 10px !important;
-} */
-
+}
 
 .serif {
   font-family: 'Noto Serif KR', serif;
 }
+
+.swiper-button-next { color: #fff !important; }
+.swiper-button-prev { color: #fff !important; }

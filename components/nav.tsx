@@ -1,16 +1,17 @@
 import Link from "next/link"
 import { cls } from "@libs/client/utils";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const variants = {
     open: { rotate : 90 },
     closed: { rotate : 0 },
 }
 
-const variants2 = {
-    open: { opacity: 1, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"},
-    closed: { opacity: 0, clipPath : "polygon(0 0, 100% 0, 100% 0, 0 0)" },
-}
+// const variants2 = {
+//     open: { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"},
+//     closed: { clipPath : "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+// }
 
 export default function Nav(){
     const [menu, setMenu] = useState(false)
@@ -20,15 +21,17 @@ export default function Nav(){
     }
 
     return(
-        <header className="flex flex-col z-50 justify-between items-center p-5 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row">
+        <header className="flex flex-col z-50 justify-between items-center p-5 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row z-20">
             <nav className="flex justify-between items-center w-full">
                 <Link href="/">
                     <div className="flex items-center cursor-pointer space-x-1 shrink-0">
                         <img src="/photo/logo.png" alt="logo" className="w-36 lg:w-48" />
                     </div>
                 </Link>
-                <div 
-                   className={cls(menu ? "transition duration-200" : "rotate-180")}
+                <motion.div 
+                    variants={variants}
+                    animate={menu ? "open" : "closed"}
+                    //className={cls(menu ? "transition duration-200" : "rotate-180")}
                 >
                     <button onClick={toggleMenu} className="w-8 h-8 lg:hidden hover:text-secondary">
                         {
@@ -42,7 +45,7 @@ export default function Nav(){
                             </svg>
                         }
                     </button>
-                </div>
+                </motion.div>
             </nav>
             <ul className="hidden gap-6 lg:flex lg:flex-row shrink-0 text-gray-700">
                 <Link href="#">
@@ -81,45 +84,51 @@ export default function Nav(){
                     </li>
                 </Link>   
             </ul>
-            <ul 
-            className={cls("flex flex-col text-center mt-2 bg-white w-[100vw] lg:hidden shrink-0 transition-all duration-200", 
-            menu? "clipopen" : "clipclose")}>
-               <Link href="#">
-                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
-                        진료안내
-                    </li>
-                </Link>
-                <Link href="/">
-                    <li className="cursor-pointer transition-all duration-200 rounded-md p-4 hover:text-primary hover:bg-gray-200">
-                        척추센터    
-                    </li>
-                </Link>
-                <Link href="/">
-                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
-                        관절센터
-                    </li>
-                </Link>
+            <AnimatePresence>
+            { menu && 
+                (<motion.ul 
+                initial={{opacity :0, height :0}}
+                animate={{opacity:1, height: "auto"}}
+                transition ={{default: { ease: "linear" }}}
+                exit={{ opacity: 0, height : 0 }}
+                className="flex flex-col text-center mt-2 bg-white w-[100vw] lg:hidden shrink-0">
                 <Link href="#">
-                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
-                        내과센터
-                    </li>
-                </Link>
-                <Link href="#">
-                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
-                        치료센터
-                    </li>
-                </Link>
-                <Link href="#">
-                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
-                        종합검진센터
-                    </li>
-                </Link>
-                <Link href="#">
-                    <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
-                        알림마당
-                    </li>
-                </Link>   
-            </ul>
+                        <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                            진료안내
+                        </li>
+                    </Link>
+                    <Link href="/">
+                        <li className="cursor-pointer transition-all duration-200 rounded-md p-4 hover:text-primary hover:bg-gray-200">
+                            척추센터    
+                        </li>
+                    </Link>
+                    <Link href="/">
+                        <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                            관절센터
+                        </li>
+                    </Link>
+                    <Link href="#">
+                        <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                            내과센터
+                        </li>
+                    </Link>
+                    <Link href="#">
+                        <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                            치료센터
+                        </li>
+                    </Link>
+                    <Link href="#">
+                        <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                            종합검진센터
+                        </li>
+                    </Link>
+                    <Link href="#">
+                        <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
+                            알림마당
+                        </li>
+                    </Link>   
+                </motion.ul>)}
+            </AnimatePresence>
         </header>
     )
 }
