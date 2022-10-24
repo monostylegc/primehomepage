@@ -86,53 +86,55 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <Slider>
-        <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-        <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-        <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-      </Slider>
+      <section className='max-w-4xl mx-auto p-6'>
+        <Slider>
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+          <Hero 
+          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
+          title='프라임병원' 
+          subtitle='아프지 말고 살아야죠' 
+          />
+        </Slider>
+      </section>
 
       <Map />
         

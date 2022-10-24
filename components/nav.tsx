@@ -21,7 +21,7 @@ export default function Nav(){
     }
 
     return(
-        <header className="flex flex-col z-50 justify-between items-center p-5 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row z-20">
+        <header className="flex flex-col justify-between items-center p-5 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row z-30">
             <nav className="flex justify-between items-center w-full">
                 <Link href="/">
                     <div className="flex items-center cursor-pointer space-x-1 shrink-0">

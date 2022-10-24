@@ -25,22 +25,18 @@ export default function Slider({ children }: SliderProps) {
             }}
             slidesPerView="auto"
             breakpoints={{
-              320: {
+              '@0.75': {
                 slidesPerView: 3,
                 spaceBetween: 10,
               },
-              640: {
+              '@1.00': {
                 slidesPerView: 4,
                 spaceBetween: 20,
               },
-              768: {
+              '@1.50': {
                 slidesPerView: 5,
                 spaceBetween: 20,
               },
-              1024: {
-                slidesPerView: 6,
-                spaceBetween: 20,
-              }
             }}
             modules={[Navigation, Pagination ]}
         >
