@@ -12,7 +12,7 @@ export default function Layout({children}:LayoutProps){
     
     return(
         <>
-            <motion.div style={{ scaleX: scrollYProgress }} className="fixed top-0 left-0 right-0 h-3 bg-gradient-to-r from-secondary to-primary z-50 origin-left rounded-r-full" />  
+            <motion.div style={{ scaleX: scrollYProgress }} className="fixed top-[80px] left-0 right-0 h-[2px] bg-primary z-50 origin-left" />  
             <Nav/>
             <div className="mt-[80px]">
               {children}

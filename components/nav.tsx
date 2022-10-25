@@ -21,7 +21,7 @@ export default function Nav(){
     }
 
     return(
-        <header className="flex flex-col justify-between items-center p-5 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row z-30">
+        <header className="flex flex-col justify-between items-center p-5 h-20 bg-white fixed top-0 left-0 right-0 lg:flex-row z-20">
             <nav className="flex justify-between items-center w-full">
                 <Link href="/">
                     <div className="flex items-center cursor-pointer space-x-1 shrink-0">
@@ -47,7 +47,7 @@ export default function Nav(){
                     </button>
                 </motion.div>
             </nav>
-            <ul className="hidden gap-6 lg:flex lg:flex-row shrink-0 text-gray-700">
+            <ul className="hidden gap-6 lg:flex lg:flex-row shrink-0 text-gray-700 z-20">
                 <Link href="#">
                     <li className=" cursor-pointer transition-all duration-200 hover:text-primary hover:scale-105">
                         진료안내
@@ -84,6 +84,8 @@ export default function Nav(){
                     </li>
                 </Link>   
             </ul>
+            {menu? <div onClick={()=>setMenu(!menu)} className="h-screen w-full fixed top-[80px] left-0 right-0 bg-black bg-opacity-70 z-10">
+            </div>:null}
             <AnimatePresence>
             { menu && 
                 (<motion.ul 
@@ -91,7 +93,7 @@ export default function Nav(){
                 animate={{opacity:1, height: "auto"}}
                 transition ={{default: { ease: "linear" }}}
                 exit={{ opacity: 0, height : 0 }}
-                className="flex flex-col text-center mt-2 bg-white w-[100vw] lg:hidden shrink-0">
+                className="flex flex-col text-center mt-2 bg-white w-[100vw] py-2 lg:hidden shrink-0 z-20">
                 <Link href="#">
                         <li className="cursor-pointer transition-all duration-200 p-4 rounded-md hover:text-primary hover:bg-gray-200">
                             진료안내
@@ -129,6 +131,7 @@ export default function Nav(){
                     </Link>   
                 </motion.ul>)}
             </AnimatePresence>
+            
         </header>
     )
 }

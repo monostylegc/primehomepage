@@ -1,22 +1,20 @@
-import { cls } from '@libs/client/utils';
 import Link from "next/link"
 
 interface CardProps {
     imgurl: string;
     title: string;
-    subtitle? : string;
     description?: string;
-    link? : string;
+    link : string;
 }
 
-
-
-export default function Card({imgurl, title, subtitle, description, link } : CardProps ) {
+export default function Card({imgurl, title, description, link } : CardProps ) {
     return (
-        <div className='flex flex-col relative'>
-            <img src={imgurl} className="absolute h-full w-full object-cover aspect-squre" />
-            
-            
-        </div>
+        <Link href={link}>
+            <a className='flex flex-col justify-center items-center shrink-0 snap-center'>
+                <img src={imgurl} className='' />
+                <h6 className='text-center text-gray-700 mt-1 text-sm'>{title}</h6>
+                <p className='text-center text-xs text-gray-400 mt-1'>{description}</p>
+            </a>
+        </Link>
     )
 }

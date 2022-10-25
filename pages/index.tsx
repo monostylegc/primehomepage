@@ -4,16 +4,13 @@ import Layout from '@components/layout'
 import Hero from '@components/hero'
 import Map from '@components/map'
 import Testimonial from '../components/testimonial'
-import Carousel from '@components/carousel'
-import { motion } from 'framer-motion'
 import Slider from '@components/slider'
-
-
+import Card from '@components/card'
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Carousel>
+      <Slider autoplay slidesPerView={1} pagination delay={5000}>
         <Hero 
         imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
         title='프라임병원' 
@@ -39,27 +36,8 @@ const Home: NextPage = () => {
         title='프라임병원' 
         subtitle='아프지 말고 살아야죠' 
         />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-         <Hero 
-        imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-        title='프라임병원' 
-        subtitle='아프지 말고 살아야죠' 
-        />
-      </Carousel>
+
+      </Slider>
       
       <Testimonial title='프라임병원의 진료철학' description='"아프지 말고 즐겁게 살자 아프지 말고 즐겁게 살자아프지 말고 즐겁게 살자아프지 말고 즐겁게 살자아프지 말고 즐겁게 살자아프지 말고 즐겁게 살자아프지 말고 즐겁게 살자
       I didnt even need training to get started. It really saves me time and effort. Framer is exactly what our business has been lacking. It"' />
@@ -86,56 +64,14 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className='max-w-4xl mx-auto p-6'>
-        <Slider>
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
-          <Hero 
-          imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
-          title='프라임병원' 
-          subtitle='아프지 말고 살아야죠' 
-          />
+      <section className='max-w-4xl mx-auto'>
+        <Slider slidesPerView={2} navigation >
+          <Card link='/' imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=41' title='간호1등급' description='프라임병원으로 오세요'/>
+          <Card link='/' imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=41' title='간호1등급' description='프라임병원으로 오세요'/>
+          <Card link='/' imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=41' title='간호1등급' description='프라임병원으로 오세요'/>
+          <Card link='/' imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=41' title='간호1등급' description='프라임병원으로 오세요'/>
         </Slider>
       </section>
-
       <Map />
         
     </Layout>
