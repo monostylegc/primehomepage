@@ -6,11 +6,12 @@ import Map from '@components/map'
 import Testimonial from '../components/testimonial'
 import Slider from '@components/slider'
 import Card from '@components/card'
+import DoctorCard from '@components/doctorcard'
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Slider autoplay slidesPerView={1} pagination delay={5000}>
+      <Slider autoplay slidesPerView={1} pagination delay={5000} loop>
         <Hero 
         imgurl='https://www.disc21.co.kr/img/main/main1_m.png' 
         title='프라임병원' 
@@ -64,7 +65,9 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className='max-w-4xl mx-auto'>
+      <section className='max-w-4xl mx-auto p-6 mb-16 text-center'>
+        <h1 className="text-4xl flex-1">프라임병원 뉴스</h1>
+        <p className="text-gray-500 my-5 leading-10 serif">새로운 소식 알려요</p>
         <Slider slidesPerView={2} navigation >
           <Card link='/' imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=41' title='간호1등급' description='프라임병원으로 오세요'/>
           <Card link='/' imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=41' title='간호1등급' description='프라임병원으로 오세요'/>
@@ -72,6 +75,21 @@ const Home: NextPage = () => {
           <Card link='/' imgurl='https://www.disc21.co.kr/webpanel/event/file_reader.php?ftype=image&event_code=41' title='간호1등급' description='프라임병원으로 오세요'/>
         </Slider>
       </section>
+
+      <section className='max-w-4xl mx-auto p-6 mb-16 text-center'>
+        <h1 className="text-4xl flex-1">프라임병원 의료진</h1>
+        <p className="text-gray-500 my-5 leading-10 serif">의사선생님들</p>
+        <Slider slidesPerView={2} navigation >
+          <DoctorCard link='/' imgurl='/photo/원장님사진.jpg' name='최봉식' part='신경외과'/>
+          <DoctorCard link='/' imgurl='/photo/이기창.jpg' name='이기창' part='신경외과'/>
+          <DoctorCard link='/' imgurl='/photo/박만제.png' name='박만제' part='신경외과'/>
+          <DoctorCard link='/' imgurl='/photo/홍완주.jpg' name='홍완주' part='신경외과'/>
+          <DoctorCard link='/' imgurl='/photo/심형훈.jpg' name='심형훈' part='신경외과'/>
+          <DoctorCard link='/' imgurl='/photo/김주연원장.jpg' name='김주연' part='신경외과'/>
+          <DoctorCard link='/' imgurl='/photo/이강유.jpg' name='이강유' part='신경외과'/>
+        </Slider>
+      </section>
+
       <Map />
         
     </Layout>
